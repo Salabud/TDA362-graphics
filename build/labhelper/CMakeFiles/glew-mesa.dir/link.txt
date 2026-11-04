@@ -1,0 +1,2 @@
+/usr/bin/ar qc libglew-mesa.a "CMakeFiles/glew-mesa.dir/glew_egl.c.o"
+/usr/bin/ranlib libglew-mesa.a

@@ -1,0 +1,373 @@
+Setting up the graphics labs (Wed Nov  4 08:54:56 CET 2026).
+Existing tools are reused. Installers may ask for your Mac password.
+Apple C++ tools: already installed
+Added Homebrew to /Users/daniel/.zprofile
+==> Auto-updating Homebrew...
+Adjust how often this is run with `$HOMEBREW_AUTO_UPDATE_SECS` or disable with
+`$HOMEBREW_NO_AUTO_UPDATE=1`. Hide these hints with `$HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Downloading https://ghcr.io/v2/homebrew/core/portable-ruby/blobs/sha256:43ff285a82f48c84a06d0676a3800815a19d290d32e44182ddd7a6e95478e18e
+#=#=#                                                                           ##O#- #                                                                         ##O=#  #                                                                        #=#=-#  #                                                                       -#O#- #   #                                                                                                                                                 0.1%                                                                            0.5%                                                                            1.2%#                                                                           1.9%#                                                                           2.0%#                                                                           2.5%##                                                                          3.3%##                                                                          3.6%##                                                                          4.1%###                                                                         4.6%####                                                                        6.7%######                                                                      8.9%#######                                                                     9.7%#######                                                                    10.4%########                                                                   11.0%#########                                                                  12.5%#########                                                                  13.7%##########                                                                 13.8%##########                                                                 14.6%###########                                                                15.2%############                                                               16.7%#############                                                              18.0%#############                                                              18.9%###############                                                            20.8%################                                                           22.4%#################                                                          23.9%##################                                                         25.7%###################                                                        26.5%####################                                                       27.9%####################                                                       28.5%#####################                                                      29.6%#####################                                                      29.7%######################                                                     30.9%######################                                                     31.5%#######################                                                    31.7%#######################                                                    32.4%########################                                                   33.4%########################                                                   34.2%##########################                                                 35.6%##########################                                                 36.5%###########################                                                37.7%############################                                               39.6%##############################                                             42.4%################################                                           44.3%#################################                                          46.3%##################################                                         47.8%####################################                                       50.1%#####################################                                      51.5%######################################                                     52.8%#######################################                                    53.9%########################################                                   54.8%#########################################                                  56.2%#########################################                                  57.3%##########################################                                 58.6%###########################################                                59.8%###########################################                                59.9%############################################                               60.6%############################################                               61.6%#############################################                              62.3%##############################################                             63.9%###############################################                            65.3%#################################################                          67.5%##################################################                         68.6%###################################################                        70.3%####################################################                       71.6%#####################################################                      72.9%######################################################                     74.9%#######################################################                    76.7%########################################################                   76.8%#########################################################                  78.2%#########################################################                  78.3%##########################################################                 79.6%##########################################################                 79.8%##########################################################                 80.2%##########################################################                 80.5%###########################################################                81.2%###########################################################                81.8%############################################################               82.8%#############################################################              84.1%##############################################################             85.3%##############################################################             86.1%###############################################################            87.4%################################################################           88.7%#################################################################          89.3%#################################################################          90.3%##################################################################         91.1%##################################################################         91.6%####################################################################       93.3%####################################################################       94.5%#####################################################################      95.6%#######################################################################    97.5%########################################################################   99.6%######################################################################### 100.0%
+==> Pouring portable-ruby-4.0.9.arm64_big_sur.bottle.tar.gz
+==> Downloading bottle manifests
+✔︎ Bottle Manifest cmake (4.4.5)
+==> Fetching downloads for: cmake
+✔︎ Bottle cmake (4.4.5)
+==> Pouring cmake--4.4.5.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/cmake/4.4.5: 4,157 files, 68.3MB
+==> `brew cleanup` has not been run in the last 30 days, running now...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+Removing: /Users/daniel/Library/Caches/Homebrew/ca-certificates--2026-05-14... (112.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/ca-certificates_bottle_manifest--2026-05-14... (1.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/dav1d--1.5.3... (365KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/dav1d_bottle_manifest--1.5.3... (7.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/double-conversion--3.4.0... (74.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/double-conversion_bottle_manifest--3.4.0... (7.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/edencommon--2026.04.20.00... (446.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/edencommon_bottle_manifest--2026.04.20.00... (28.5KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fb303--2026.04.20.00... (799.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fb303_bottle_manifest--2026.04.20.00... (27.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fbthrift--2026.04.20.00... (8.7MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fbthrift_bottle_manifest--2026.04.20.00... (26.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/ffmpeg--8.1.1... (21.5MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/ffmpeg_bottle_manifest--8.1.1... (38.8KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fizz--2026.04.20.00... (691.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fizz_bottle_manifest--2026.04.20.00... (23.2KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fmt--12.1.0... (283.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/fmt_bottle_manifest--12.1.0... (7.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/folly--2026.04.20.00... (7.6MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/folly_bottle_manifest--2026.04.20.00... (22.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/gflags--2.3.0... (232.8KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/gflags_bottle_manifest--2.3.0... (7.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/glog--0.7.1... (125.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/glog_bottle_manifest--0.7.1... (8.2KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/icu4c@78--78.3... (32MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/icu4c@78_bottle_manifest--78.3... (9.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libevent--2.1.12_1... (715KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libevent_bottle_manifest--2.1.12_1... (17KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libsodium--1.0.22... (413.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libsodium_bottle_manifest--1.0.22... (7.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libvmaf--3.1.0... (1.1MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libvmaf_bottle_manifest--3.1.0... (7.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libvpx--1.16.0... (1.9MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/libvpx_bottle_manifest--1.16.0... (7.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/mlx--0.31.2... (37.4MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/mlx_bottle_manifest--0.31.2... (9.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/mlx-c--0.6.0_2... (186.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/mlx-c_bottle_manifest--0.6.0_2... (9.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/ollama--0.24.0... (13.7MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/ollama_bottle_manifest--0.24.0... (13.9KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/openssl@3--3.6.2... (10.9MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/openssl@3_bottle_manifest--3.6.2... (12KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/opus--1.6.1... (505.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/opus_bottle_manifest--1.6.1... (7.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/pcre2--10.47_1... (2.4MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/pcre2_bottle_manifest--10.47_1... (11.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/python@3.14--3.14.5... (19.2MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/python@3.14_bottle_manifest--3.14.5... (31.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/snappy--1.2.2... (46.9KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/snappy_bottle_manifest--1.2.2... (9.2KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/sqlite--3.53.1... (2.5MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/sqlite_bottle_manifest--3.53.1... (11.8KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/svt-av1--4.1.0... (1.3MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/svt-av1_bottle_manifest--4.1.0... (7.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/tmux--3.6b... (510.5KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/tmux_bottle_manifest--3.6b-1... (12.7KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/utf8proc--2.11.3... (107.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/utf8proc_bottle_manifest--2.11.3-1... (7.5KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/wangle--2026.04.20.00... (929.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/wangle_bottle_manifest--2026.04.20.00... (24.3KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/watchman--2026.04.20.00... (3.4MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/watchman_bottle_manifest--2026.04.20.00... (38.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/x264--r3222... (2MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/x264_bottle_manifest--r3222... (9.8KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/x265--4.2... (5.4MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/x265_bottle_manifest--4.2... (7.6KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/xxhash--0.8.3... (149.1KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/xxhash_bottle_manifest--0.8.3... (10.4KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/xz--5.8.3... (771.2KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/xz_bottle_manifest--5.8.3... (11.8KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/portable-ruby-4.0.6.arm64_big_sur.bottle.tar.gz... (12.7MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/sdl2_bottle_manifest--2.32.10... (23KB)
+Removing: /Users/daniel/Library/Caches/Homebrew/sdl2--2.32.10... (1.8MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/Cask/zulu17.66.19-ca-jdk17.0.19-macosx_aarch64.dmg--17.0.19,17.66.19.dmg... (195.4MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/bootsnap/73bada37eebebfe77b8a06ce2733fc126b63107a60cd6f91873d68b62529f780... (1,059 files, 9.5MB)
+Removing: /Users/daniel/Library/Caches/Homebrew/bootsnap/0ea8e32e2d5779b2ee6b057296a62d6739c9c2dd1ff3a16117c0befbac9d2c64... (1,063 files, 9.7MB)
+==> Caveats
+Emacs Lisp files have been installed to:
+  /opt/homebrew/share/emacs/site-lisp/cmake
+==> cmake
+To install the CMake documentation, run:
+  brew install cmake-docs
+sdl2: already installed
+==> Downloading bottle manifests
+✔︎ Bottle Manifest glm (1.0.3)
+==> Fetching downloads for: glm
+✔︎ Bottle glm (1.0.3)
+==> Pouring glm--1.0.3.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/glm/1.0.3: 1,909 files, 24MB
+==> Downloading bottle manifests
+✔︎ Bottle Manifest mesa (26.2.6)
+==> Would install 1 formula:
+mesa 26.2.6
+==> Would install 6 dependencies for mesa:
+libclc                 23.1.5
+libxfixes              6.0.2
+spirv-llvm-translator  23.1.3
+spirv-tools            1.4.363.0
+xcb-util-keysyms       0.4.1
+molten-vk              1.4.2
+==> Would upgrade 7 dependencies for mesa:
+libpng     1.6.54   -> 1.6.59
+xorgproto  2024.1   -> 2026.1
+libx11     1.8.12   -> 1.8.14
+libxext    1.3.6    -> 1.3.7
+xz         5.8.3    -> 5.8.4
+z3         4.15.4   -> 5.3.3
+llvm       21.1.8_1 -> 23.1.4
+==> Fetching downloads for: mesa
+✔︎ Bottle Manifest libclc (23.1.5)
+✔︎ Bottle Manifest libpng (1.6.59)
+✔︎ Bottle Manifest xorgproto (2026.1)
+✔︎ Bottle Manifest libx11 (1.8.14)
+✔︎ Bottle Manifest libxext (1.3.7)
+✔︎ Bottle Manifest libxfixes (6.0.2)
+✔︎ Bottle Manifest z3 (5.3.3)
+✔︎ Bottle Manifest spirv-tools (1.4.363.0)
+✔︎ Bottle Manifest xz (5.8.4)
+✔︎ Bottle Manifest llvm (23.1.4)
+✔︎ Bottle Manifest spirv-llvm-translator (23.1.3)
+✔︎ Bottle libxfixes (6.0.2)
+✔︎ Bottle libxext (1.3.7)
+✔︎ Bottle Manifest molten-vk (1.4.2)
+✔︎ Bottle Manifest xcb-util-keysyms (0.4.1)
+✔︎ Bottle libpng (1.6.59)
+✔︎ Bottle xorgproto (2026.1)
+✔︎ Bottle xcb-util-keysyms (0.4.1)
+✔︎ Bottle xz (5.8.4)
+✔︎ Bottle spirv-llvm-translator (23.1.3)
+✔︎ Bottle libx11 (1.8.14)
+✔︎ Bottle spirv-tools (1.4.363.0)
+✔︎ Bottle z3 (5.3.3)
+✔︎ Bottle libclc (23.1.5)
+✔︎ Bottle mesa (26.2.6)
+✔︎ Bottle molten-vk (1.4.2)
+✔︎ Bottle llvm (23.1.4)
+==> Installing dependencies for mesa: libclc, libpng, xorgproto, libx11, libxext, libxfixes, xz, z3, llvm, spirv-llvm-translator, spirv-tools, xcb-util-keysyms and molten-vk
+==> Installing mesa dependency: libclc (23.1.5)
+==> Pouring libclc--23.1.5.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libclc/23.1.5: 18 files, 73.7MB
+==> Upgrading mesa dependency: libpng (1.6.54 -> 1.6.59)
+==> Pouring libpng--1.6.59.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libpng/1.6.59: 28 files, 1.4MB
+==> Upgrading mesa dependency: xorgproto (2024.1 -> 2026.1)
+==> Pouring xorgproto--2026.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xorgproto/2026.1: 268 files, 4.1MB
+==> Upgrading mesa dependency: libx11 (1.8.12 -> 1.8.14)
+==> Pouring libx11--1.8.14.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libx11/1.8.14: 1,028 files, 7MB
+==> Upgrading mesa dependency: libxext (1.3.6 -> 1.3.7)
+==> Pouring libxext--1.3.7.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxext/1.3.7: 88 files, 449KB
+==> Installing mesa dependency: libxfixes (6.0.2)
+==> Pouring libxfixes--6.0.2.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxfixes/6.0.2: 13 files, 127.8KB
+==> Upgrading mesa dependency: xz (5.8.3 -> 5.8.4)
+==> Pouring xz--5.8.4.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.8.4: 96 files, 2.7MB
+==> Upgrading mesa dependency: z3 (4.15.4 -> 5.3.3)
+==> Pouring z3--5.3.3.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/z3/5.3.3: 143 files, 45.1MB
+==> Upgrading mesa dependency: llvm (21.1.8_1 -> 23.1.4)
+==> Pouring llvm--23.1.4.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/llvm/23.1.4: 9,338 files, 1.9GB
+==> Installing mesa dependency: spirv-llvm-translator (23.1.3)
+==> Pouring spirv-llvm-translator--23.1.3.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/spirv-llvm-translator/23.1.3: 12 files, 4.2MB
+==> Installing mesa dependency: spirv-tools (1.4.363.0)
+==> Pouring spirv-tools--1.4.363.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/spirv-tools/1.4.363.0: 52 files, 10.5MB
+==> Installing mesa dependency: xcb-util-keysyms (0.4.1)
+==> Pouring xcb-util-keysyms--0.4.1.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xcb-util-keysyms/0.4.1: 12 files, 73.3KB
+==> Installing mesa dependency: molten-vk (1.4.2)
+==> Pouring molten-vk--1.4.2.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/molten-vk/1.4.2: 84 files, 87.3MB
+==> Installing mesa
+==> Pouring mesa--26.2.6.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/mesa/26.2.6: 66 files, 71.7MB
+==> Downloading Homebrew API data
+✔︎ JSON API packages.arm64_sequoia.jws.json
+==> Downloading bottle manifests
+✔︎ Bottle Manifest embree (4.4.1)
+==> Would install 1 formula:
+embree 4.4.1
+==> Would install 2 dependencies for embree:
+hwloc  2.15.0
+tbb    2023.2.0
+==> Fetching downloads for: embree
+✔︎ Bottle Manifest hwloc (2.15.0)
+✔︎ Bottle Manifest tbb (2023.2.0)
+✔︎ Bottle tbb (2023.2.0)
+✔︎ Bottle embree (4.4.1)
+✔︎ Bottle hwloc (2.15.0)
+==> Installing dependencies for embree: hwloc and tbb
+==> Installing embree dependency: hwloc (2.15.0)
+==> Pouring hwloc--2.15.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/hwloc/2.15.0: 996 files, 11.3MB
+==> Installing embree dependency: tbb (2023.2.0)
+==> Pouring tbb--2023.2.0.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/tbb/2023.2.0: 187 files, 2.9MB
+==> Installing embree
+==> Pouring embree--4.4.1.arm64_sequoia.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/embree/4.4.1: 190 files, 21.1MB
+==> Downloading bottle manifests
+✔︎ Bottle Manifest libomp (23.1.5)
+==> Fetching downloads for: libomp
+✔︎ Bottle libomp (23.1.5)
+==> Pouring libomp--23.1.5.arm64_sequoia.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libomp/23.1.5: 11 files, 1.8MB
+==> Caveats
+==> libomp
+libomp is keg-only, which means it was not symlinked into /opt/homebrew,
+because it can override GCC headers and result in broken builds.
+
+For compilers to find libomp you may need to set:
+  export LDFLAGS=-L/opt/homebrew/opt/libomp/lib
+  export CPPFLAGS=-I/opt/homebrew/opt/libomp/include
+Installing VS Code extensions...
+Installing extensions...
+Extension 'ms-vscode.cpptools' v1.35.6 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'ms-vscode.cpptools@1.2.3'.
+Installing extensions...
+Extension 'ms-vscode.cmake-tools' v1.24.42 is already installed. Use '--force' option to update to latest version or provide '@<version>' to install a specific version, for example: 'ms-vscode.cmake-tools@1.2.3'.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 66  816k   66  540k    0     0   752k      0  0:00:01 --:--:--  0:00:01  752k100  816k  100  816k    0     0  1062k      0 --:--:-- --:--:-- --:--:-- 5511k
+Configuring and building the labs...
+-- The C compiler identification is AppleClang 15.0.0.15000309
+-- The CXX compiler identification is AppleClang 15.0.0.15000309
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- SDL2_LIBRARIES wasn't set, manually setting to SDL2::SDL2
+-- Found OpenMP_CXX: -Xclang -fopenmp (found version "5.0")
+-- Found OpenMP: TRUE (found version "5.0") found components: CXX
+-- Configuring done (3.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/daniel/chalmers/TDA362-graphics/build
+[ 23%] Building CXX object labhelper/imgui/CMakeFiles/imgui.dir/imgui_draw.cpp.o
+[ 23%] Building CXX object labhelper/imgui/CMakeFiles/imgui.dir/imgui.cpp.o
+[ 23%] Building C object labhelper/CMakeFiles/glew-mesa.dir/glew_egl.c.o
+In file included from /Users/daniel/chalmers/TDA362-graphics/build/labhelper/glew_egl.c:43:
+/Users/daniel/chalmers/TDA362-graphics/build/mesa-deps/glew-2.2.0/include/GL/eglew.h:2649:80: warning: declaration of 'struct wl_display' will not be visible outside of this function [-Wvisibility]
+typedef EGLBoolean ( * PFNEGLBINDWAYLANDDISPLAYWLPROC) (EGLDisplay dpy, struct wl_display* display);
+                                                                               ^
+/Users/daniel/chalmers/TDA362-graphics/build/mesa-deps/glew-2.2.0/include/GL/eglew.h:2650:80: warning: declaration of 'struct wl_resource' will not be visible outside of this function [-Wvisibility]
+typedef EGLBoolean ( * PFNEGLQUERYWAYLANDBUFFERWLPROC) (EGLDisplay dpy, struct wl_resource* buffer, EGLint attribute, EGLint* value);
+                                                                               ^
+/Users/daniel/chalmers/TDA362-graphics/build/mesa-deps/glew-2.2.0/include/GL/eglew.h:2651:82: warning: declaration of 'struct wl_display' will not be visible outside of this function [-Wvisibility]
+typedef EGLBoolean ( * PFNEGLUNBINDWAYLANDDISPLAYWLPROC) (EGLDisplay dpy, struct wl_display* display);
+                                                                                 ^
+/Users/daniel/chalmers/TDA362-graphics/external_src/imgui-1.51/imgui.cpp:10418:42: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+                                buf_p += sprintf(buf_p, "%s %04d { pos = (%8.2f,%8.2f), uv = (%.6f,%.6f), col = %08X }\n", (n == 0) ? "vtx" : "   ", vtx_i, v.pos.x, v.pos.y, v.uv.x, v.uv.y, v.col);
+                                         ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:180:1: note: 'sprintf' has been explicitly marked deprecated here
+__deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+        #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+                                                      ^
+1 warning generated.
+3 warnings generated.
+[ 38%] Linking CXX static library libimgui.a
+[ 38%] Linking C static library libglew-mesa.a
+[ 38%] Built target imgui
+[ 38%] Built target glew-mesa
+[ 69%] Building CXX object labhelper/CMakeFiles/labhelper.dir/hdr.cpp.o
+[ 69%] Building CXX object labhelper/CMakeFiles/labhelper.dir/Model.cpp.o
+[ 69%] Building CXX object labhelper/CMakeFiles/labhelper.dir/labhelper.cpp.o
+[ 69%] Building CXX object labhelper/CMakeFiles/labhelper.dir/imgui_impl_sdl_gl3.cpp.o
+In file included from /Users/daniel/chalmers/TDA362-graphics/labhelper/labhelper.cpp:22:
+/Users/daniel/chalmers/TDA362-graphics/external_src/stb-master/stb_image_write.h:629:13: warning: 'sprintf' is deprecated: This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead. [-Wdeprecated-declarations]
+      len = sprintf(buffer, "EXPOSURE=          1.0000000000000\n\n-Y %d +X %d\n", y, x);
+            ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:180:1: note: 'sprintf' has been explicitly marked deprecated here
+__deprecated_msg("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of sprintf(3), it is highly recommended that you use snprintf(3) instead.")
+^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h:218:48: note: expanded from macro '__deprecated_msg'
+        #define __deprecated_msg(_msg) __attribute__((__deprecated__(_msg)))
+                                                      ^
+[ 76%] Building CXX object labhelper/CMakeFiles/labhelper.dir/mesa_window.cpp.o
+1 warning generated.
+[ 84%] Linking CXX static library liblabhelper.a
+[ 84%] Built target labhelper
+[ 92%] Building CXX object lab1-rasterization/CMakeFiles/lab1-rasterization.dir/lab1_main.cpp.o
+/Users/daniel/chalmers/TDA362-graphics/lab1-rasterization/lab1_main.cpp:19:20: warning: 'extern' variable has an initializer [-Wextern-initializer]
+extern SDL_Window* g_window = nullptr;
+                   ^
+1 warning generated.
+[100%] Linking CXX executable lab1-rasterization
+[100%] Built target lab1-rasterization
+[ 15%] Built target glew-mesa
+[ 38%] Built target imgui
+[ 84%] Built target labhelper
+[ 92%] Building CXX object lab2-textures/CMakeFiles/lab2-textures.dir/lab2_main.cpp.o
+[100%] Linking CXX executable lab2-textures
+[100%] Built target lab2-textures
+[ 15%] Built target glew-mesa
+[ 38%] Built target imgui
+[ 84%] Built target labhelper
+[ 92%] Building CXX object lab3-camera/CMakeFiles/lab3-camera.dir/lab3_main.cpp.o
+[100%] Linking CXX executable lab3-camera
+[100%] Built target lab3-camera
+[ 15%] Built target glew-mesa
+[ 38%] Built target imgui
+[ 84%] Built target labhelper
+[ 92%] Building CXX object lab4-shading/CMakeFiles/lab4-shading.dir/lab4_main.cpp.o
+[100%] Linking CXX executable lab4-shading
+[100%] Built target lab4-shading
+[ 15%] Built target glew-mesa
+[ 38%] Built target imgui
+[ 84%] Built target labhelper
+[ 92%] Building CXX object lab5-rendertotexture/CMakeFiles/lab5-rendertotexture.dir/lab5_main.cpp.o
+[100%] Linking CXX executable lab5-rendertotexture
+[100%] Built target lab5-rendertotexture
+[ 14%] Built target glew-mesa
+[ 35%] Built target imgui
+[ 78%] Built target labhelper
+[ 92%] Building CXX object lab6-shadowmaps/CMakeFiles/lab6-shadowmaps.dir/lab6_main.cpp.o
+[ 92%] Building CXX object lab6-shadowmaps/CMakeFiles/lab6-shadowmaps.dir/fbo.cpp.o
+[100%] Linking CXX executable lab6-shadowmaps
+[100%] Built target lab6-shadowmaps
+[ 12%] Built target glew-mesa
+[ 31%] Built target imgui
+[ 68%] Built target labhelper
+[ 93%] Building CXX object project/CMakeFiles/project.dir/heightfield.cpp.o
+[ 93%] Building CXX object project/CMakeFiles/project.dir/main.cpp.o
+[ 93%] Building CXX object project/CMakeFiles/project.dir/ParticleSystem.cpp.o
+[ 93%] Building CXX object project/CMakeFiles/project.dir/fbo.cpp.o
+[100%] Linking CXX executable project
+[100%] Built target project
+[ 11%] Built target glew-mesa
+[ 27%] Built target imgui
+[ 61%] Built target labhelper
+[ 83%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/HDRImage.cpp.o
+[ 83%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/Pathtracer.cpp.o
+[ 83%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/main.cpp.o
+[ 83%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/sampling.cpp.o
+[ 88%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/embree.cpp.o
+[ 94%] Building CXX object pathtracer/CMakeFiles/pathtracer.dir/material.cpp.o
+[100%] Linking CXX executable pathtracer
+[100%] Built target pathtracer
+Setup complete. In VS Code, trust the course folder if asked.
+Open Run and Debug, select lab1-rasterization, and press F5.
+If VS Code was already open, close all its windows and reopen the course folder to refresh its tools.
+Setup log: /Users/daniel/chalmers/TDA362-graphics/build/setup-macos.log
