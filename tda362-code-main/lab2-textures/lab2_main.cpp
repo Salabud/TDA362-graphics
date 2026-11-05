@@ -43,7 +43,7 @@ GLuint shaderProgram;
 
 // The vertexArrayObject here will hold the pointers to
 // the vertex data (in positionBuffer) and color data per vertex (in colorBuffer)
-GLuint positionBuffer, colorBuffer, indexBuffer, vertexArrayObject;
+GLuint positionBuffer, colorBuffer, indexBuffer, vertexArrayObject, texCoordBuffer, texture;
 
 
 
@@ -91,6 +91,18 @@ void initialize()
 	//			Enable the vertex attrib array.
 	///////////////////////////////////////////////////////////////////////////
 
+	float texcoords[] = {    
+		0.0f, 0.0f, // (u,v) for v0 
+		0.0f, 1.0f, // (u,v) for v1
+		1.0f, 1.0f, // (u,v) for v2
+		1.0f, 0.0f // (u,v) for v3
+	};
+	glGenBuffers(1, &texCoordBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER, texCoordBuffer);
+	glBufferData(GL_ARRAY_BUFFER, labhelper::array_length(texcoords) * sizeof(float), texcoords, GL_STATIC_DRAW);
+	
+	glVertexAttribPointer(1, 2, GL_FLOAT, false,0,0);
+	glEnableVertexAttribArray(1);
 	///////////////////////////////////////////////////////////////////////////
 	// Create the element array buffer object
 	///////////////////////////////////////////////////////////////////////////
@@ -115,8 +127,22 @@ void initialize()
 	//			Load Texture
 	//************************************
 	// Task 2
-}
+	int w, h, comp;
+	unsigned char* image = stbi_load("../scenes/textures/asphalt.jpg", &w, &h, &comp, STBI_rgb_alpha);
+	glGenTextures(1, &texture);
 
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	free(image);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+	
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 /// This function will be called once per frame, so the code to set up
@@ -157,6 +183,8 @@ void display(void)
 	glUniform3f(loc, camera_pan, 10, 0);
 
 	// Task 3.1
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture);
 
 	glBindVertexArray(vertexArrayObject);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
