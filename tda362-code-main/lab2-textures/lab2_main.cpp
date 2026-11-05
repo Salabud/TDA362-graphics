@@ -43,7 +43,7 @@ GLuint shaderProgram;
 
 // The vertexArrayObject here will hold the pointers to
 // the vertex data (in positionBuffer) and color data per vertex (in colorBuffer)
-GLuint positionBuffer, colorBuffer, indexBuffer, vertexArrayObject, texCoordBuffer, texture;
+GLuint positionBuffer, colorBuffer, indexBuffer, vertexArrayObject, texCoordBuffer, texture, filterSettingMag, filterSettingMin;
 
 
 
@@ -91,11 +91,11 @@ void initialize()
 	//			Enable the vertex attrib array.
 	///////////////////////////////////////////////////////////////////////////
 
-	float texcoords[] = {    
-		0.0f, 0.0f, // (u,v) for v0 
-		0.0f, 1.0f, // (u,v) for v1
-		1.0f, 1.0f, // (u,v) for v2
-		1.0f, 0.0f // (u,v) for v3
+	float texcoords[] = {
+		0.0f, 0.0f,    // (u,v) for v0
+		0.0f, 15.0f,   // (u,v) for v1
+		1.0f, 15.0f,   // (u,v) for v2
+		1.0f, 0.0f     // (u,v) for v3
 	};
 	glGenBuffers(1, &texCoordBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, texCoordBuffer);
@@ -135,13 +135,16 @@ void initialize()
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	free(image);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glGenerateMipmap(GL_TEXTURE_2D);
+	// Sets the type of filtering to be used on magnifying and
+	// minifying the active texture. These are the nicest available options.
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-	
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropy);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -181,6 +184,23 @@ void display(void)
 
 	loc = glGetUniformLocation(shaderProgram, "cameraPosition");
 	glUniform3f(loc, camera_pan, 10, 0);
+
+	switch(mini){
+		case 0: filterSettingMin = GL_NEAREST; break;
+		case 1: filterSettingMin = GL_LINEAR; break;
+		case 2: filterSettingMin = GL_NEAREST_MIPMAP_NEAREST; break;
+		case 3: filterSettingMin = GL_NEAREST_MIPMAP_LINEAR; break;
+		case 4: filterSettingMin = GL_LINEAR_MIPMAP_NEAREST; break;
+		case 5: filterSettingMin = GL_LINEAR_MIPMAP_LINEAR; break;
+	};
+	switch(mag){
+		case 0: filterSettingMag = GL_NEAREST; break;
+		case 1: filterSettingMag = GL_LINEAR; break;
+	};
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filterSettingMin);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filterSettingMag);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropy);
 
 	// Task 3.1
 	glActiveTexture(GL_TEXTURE0);
@@ -222,7 +242,6 @@ void gui()
 	ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate,
 	            ImGui::GetIO().Framerate);
 	// ----------------------------------------------------------
-
 }
 
 int main(int argc, char* argv[])

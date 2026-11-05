@@ -15,5 +15,5 @@ void main()
 {
 	// Task 1: Use the texture coordinates for the x,y of the color output
 	// Task 3.5: Sample the texture with the texture coordinates and use that for the color
-	fragmentColor = vec4(colortexture, texCoord.xy);
+	fragmentColor = texture(colortexture, texCoord);
 }
