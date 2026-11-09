@@ -43,7 +43,9 @@ GLuint shaderProgram;
 
 // The vertexArrayObject here will hold the pointers to
 // the vertex data (in positionBuffer) and color data per vertex (in colorBuffer)
-GLuint positionBuffer, colorBuffer, indexBuffer, indexBufferExp, vertexArrayObject, vertexArrayObjectExp, positionBufferExp, texCoordBuffer, texCoordBufferExp, texture, textureExp;
+GLuint positionBuffer, colorBuffer, indexBuffer, indexBufferExp, vertexArrayObject, 
+vertexArrayObjectExp, positionBufferExp, texCoordBuffer, texCoordBufferExp, texture, textureExp,
+filterSettingMin, filterSettingMag;
 
 void init_explosion()
 {
@@ -80,8 +82,8 @@ void init_explosion()
 	glEnableVertexAttribArray(1);
 
 	const int indices_exp[] = {
-		0, 1, 3, // Triangle 1
-		1, 2, 3  // Triangle 2
+		0, 3, 1, // Triangle 1
+		1, 3, 2  // Triangle 2
 	};
 	glGenBuffers(1, &indexBufferExp);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferExp);
@@ -151,11 +153,11 @@ void initialize()
 	//			Enable the vertex attrib array.
 	///////////////////////////////////////////////////////////////////////////
 
-	float texcoords[] = {    
-		0.0f, 0.0f, // (u,v) for v0 
-		0.0f, 15.0f, // (u,v) for v1
-		1.0f, 15.0f, // (u,v) for v2
-		1.0f, 0.0f // (u,v) for v3
+	float texcoords[] = {
+		0.0f, 0.0f,    // (u,v) for v0
+		0.0f, 15.0f,   // (u,v) for v1
+		1.0f, 15.0f,   // (u,v) for v2
+		1.0f, 0.0f     // (u,v) for v3
 	};
 	glGenBuffers(1, &texCoordBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, texCoordBuffer);
@@ -167,8 +169,8 @@ void initialize()
 	// Create the element array buffer object
 	///////////////////////////////////////////////////////////////////////////
 	const int indices[] = {
-		0, 1, 3, // Triangle 1
-		1, 2, 3  // Triangle 2
+		0, 3, 1, // Triangle 1
+		1, 3, 2  // Triangle 2
 	};
 	glGenBuffers(1, &indexBuffer);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
@@ -199,11 +201,12 @@ void initialize()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 	glGenerateMipmap(GL_TEXTURE_2D);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	// Sets the type of filtering to be used on magnifying and
+	// minifying the active texture. These are the nicest available options.
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 16.0f);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropy);
 
 	init_explosion();
 }
@@ -227,7 +230,7 @@ void display(void)
 
 	// We disable backface culling for this tutorial, otherwise care must be taken with the winding order
 	// of the vertices. It is however a lot faster to enable culling when drawing large scenes.
-	glDisable(GL_CULL_FACE); //glEnable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE); //glEnable(GL_CULL_FACE);
 	// Disable depth testing
 	glDisable(GL_DEPTH_TEST);
 	// Set the shader program to use for this draw call
@@ -246,9 +249,27 @@ void display(void)
 	loc = glGetUniformLocation(shaderProgram, "cameraPosition");
 	glUniform3f(loc, camera_pan, 10, 0);
 
+	switch(mini){
+		case 0: filterSettingMin = GL_NEAREST; break;
+		case 1: filterSettingMin = GL_LINEAR; break;
+		case 2: filterSettingMin = GL_NEAREST_MIPMAP_NEAREST; break;
+		case 3: filterSettingMin = GL_NEAREST_MIPMAP_LINEAR; break;
+		case 4: filterSettingMin = GL_LINEAR_MIPMAP_NEAREST; break;
+		case 5: filterSettingMin = GL_LINEAR_MIPMAP_LINEAR; break;
+	};
+	switch(mag){
+		case 0: filterSettingMag = GL_NEAREST; break;
+		case 1: filterSettingMag = GL_LINEAR; break;
+	};
+
+	
 	// Task 3.1
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
+	
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filterSettingMin);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filterSettingMag);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, anisotropy);
 
 	glBindVertexArray(vertexArrayObject);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
@@ -296,7 +317,6 @@ void gui()
 	ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate,
 	            ImGui::GetIO().Framerate);
 	// ----------------------------------------------------------
-
 }
 
 int main(int argc, char* argv[])
