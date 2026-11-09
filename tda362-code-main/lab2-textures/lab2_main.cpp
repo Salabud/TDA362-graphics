@@ -43,10 +43,70 @@ GLuint shaderProgram;
 
 // The vertexArrayObject here will hold the pointers to
 // the vertex data (in positionBuffer) and color data per vertex (in colorBuffer)
-GLuint positionBuffer, colorBuffer, indexBuffer, vertexArrayObject, texCoordBuffer, texture;
+GLuint positionBuffer, colorBuffer, indexBuffer, indexBufferExp, vertexArrayObject, vertexArrayObjectExp, positionBufferExp, texCoordBuffer, texCoordBufferExp, texture, textureExp;
 
+void init_explosion()
+{
+	glGenVertexArrays(1, &vertexArrayObjectExp);
+	glBindVertexArray(vertexArrayObjectExp);
+	const float positions_exp[] = {
+		0.0f, 0.0f, -30.0f,  // v0
+		0.0f,  5.0f, -30.0f, // v1
+		5.0f,  5.0f, -30.0f,   // v3
+		5.0f, 0.0f, -30.0f // v2
+	};
 
+	glGenBuffers(1, &positionBufferExp);
+	// Set the newly created buffer as the current one
+	glBindBuffer(GL_ARRAY_BUFFER, positionBufferExp);
+	// Send the vetex position data to the current buffer
+	glBufferData(GL_ARRAY_BUFFER, labhelper::array_length(positions_exp) * sizeof(float), positions_exp,
+	             GL_STATIC_DRAW);
+	glVertexAttribPointer(0, 3, GL_FLOAT, false /*normalized*/, 0 /*stride*/, 0 /*offset*/);
+	// Enable the attribute
+	glEnableVertexAttribArray(0);
 
+	float texcoords_exp[] = {    
+		0.0f, 0.0f, // (u,v) for v0 
+		0.0f, 1.0f, // (u,v) for v1
+		1.0f, 1.0f, // (u,v) for v2
+		1.0f, 0.0f // (u,v) for v3
+	};
+	glGenBuffers(1, &texCoordBufferExp);
+	glBindBuffer(GL_ARRAY_BUFFER, texCoordBufferExp);
+	glBufferData(GL_ARRAY_BUFFER, labhelper::array_length(texcoords_exp) * sizeof(float), texcoords_exp, GL_STATIC_DRAW);
+
+	glVertexAttribPointer(1, 2, GL_FLOAT, false,0,0);
+	glEnableVertexAttribArray(1);
+
+	const int indices_exp[] = {
+		0, 1, 3, // Triangle 1
+		1, 2, 3  // Triangle 2
+	};
+	glGenBuffers(1, &indexBufferExp);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferExp);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, labhelper::array_length(indices_exp) * sizeof(float), indices_exp,
+	             GL_STATIC_DRAW);
+
+	int w, h, comp;
+	unsigned char* image = stbi_load("../scenes/textures/explosion.png", &w, &h, &comp, STBI_rgb_alpha);
+	glGenTextures(1, &textureExp);
+
+	glBindTexture(GL_TEXTURE_2D, textureExp);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	free(image);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 16.0f);
+
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 /// This function is called once at the start of the program and never again
@@ -93,8 +153,8 @@ void initialize()
 
 	float texcoords[] = {    
 		0.0f, 0.0f, // (u,v) for v0 
-		0.0f, 1.0f, // (u,v) for v1
-		1.0f, 1.0f, // (u,v) for v2
+		0.0f, 15.0f, // (u,v) for v1
+		1.0f, 15.0f, // (u,v) for v2
 		1.0f, 0.0f // (u,v) for v3
 	};
 	glGenBuffers(1, &texCoordBuffer);
@@ -135,13 +195,17 @@ void initialize()
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	free(image);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glGenerateMipmap(GL_TEXTURE_2D);
 
-	
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAX_ANISOTROPY_EXT, 16.0f);
+
+	init_explosion();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -188,6 +252,16 @@ void display(void)
 
 	glBindVertexArray(vertexArrayObject);
 	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+	//explosion
+	glBindTexture(GL_TEXTURE_2D, textureExp);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	glBindVertexArray(vertexArrayObjectExp);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+	glDisable(GL_BLEND); // Future-proof
 
 
 	glUseProgram(0); // "unsets" the current shader program. Not really necessary.
